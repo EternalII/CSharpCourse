@@ -1,0 +1,7 @@
+D:\GitHub\CSharpCourse\A23 Ex01 LiorGordon 308140631 OmriNamni 313323685\Ex01_04\obj\Debug\Ex01_04.csproj.AssemblyReference.cache
+D:\GitHub\CSharpCourse\A23 Ex01 LiorGordon 308140631 OmriNamni 313323685\Ex01_04\obj\Debug\Ex01_04.csproj.CoreCompileInputs.cache
+D:\GitHub\CSharpCourse\A23 Ex01 LiorGordon 308140631 OmriNamni 313323685\Ex01_04\bin\Debug\Ex01_04.exe.config
+D:\GitHub\CSharpCourse\A23 Ex01 LiorGordon 308140631 OmriNamni 313323685\Ex01_04\bin\Debug\Ex01_04.exe
+D:\GitHub\CSharpCourse\A23 Ex01 LiorGordon 308140631 OmriNamni 313323685\Ex01_04\bin\Debug\Ex01_04.pdb
+D:\GitHub\CSharpCourse\A23 Ex01 LiorGordon 308140631 OmriNamni 313323685\Ex01_04\obj\Debug\Ex01_04.exe
+D:\GitHub\CSharpCourse\A23 Ex01 LiorGordon 308140631 OmriNamni 313323685\Ex01_04\obj\Debug\Ex01_04.pdb
