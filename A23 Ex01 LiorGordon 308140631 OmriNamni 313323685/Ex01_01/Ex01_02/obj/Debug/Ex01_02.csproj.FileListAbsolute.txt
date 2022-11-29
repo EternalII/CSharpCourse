@@ -1,0 +1,5 @@
+C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_01\bin\Debug\Ex01_01.exe
+C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_01\bin\Debug\Ex01_01.pdb
+C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_01\obj\Debug\Ex01_02.csproj.CoreCompileInputs.cache
+C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_01\obj\Debug\Ex01_01.exe
+C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_01\obj\Debug\Ex01_01.pdb
