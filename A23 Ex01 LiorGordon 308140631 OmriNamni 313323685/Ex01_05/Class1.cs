@@ -8,10 +8,16 @@ namespace Ex01_05
 {
     class Ex05
     {
-        public static void main()
+        public static void Main()
         {
+            int number = 0;
+            numStatistics stats = new numStatistics();
             
-            
+            number = stats.getUserInput();
+            //stats.biggetThanFirst(number);
+            //stats.smallest(number);
+            //stats.digitDivThree(number);
+            //stats.averageDigits(number);
         }
 
     }
@@ -23,12 +29,27 @@ namespace Ex01_05
         {
 
             string readLine;
-            int userInput = -1;
+            int userInput = -1, countChars = 0;
 
+            TryInputAgain:
             Console.WriteLine("Please enter 6 digits: \n");
             readLine = Console.ReadLine();
-            userInput = Convert.ToInt32(readLine);
-            Console.WriteLine($"userInput\n");
+            
+            try
+            {
+                userInput = Convert.ToInt32(readLine);
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Invalid input, please try again\n");
+                goto TryInputAgain;
+            }
+
+            foreach (int num in readLine)
+            {
+                countChars++;
+            }
+
             return userInput;
         }
 
