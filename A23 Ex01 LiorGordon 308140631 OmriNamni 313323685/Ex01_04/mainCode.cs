@@ -10,17 +10,20 @@ namespace Ex01_04
     {
         public static void Main()
         {
+            int charType = -1;
             stringAnalysis sAnalize = new stringAnalysis(); // must be either only numbers or letters, not mixed.
             string userInput;
 
             userInput = sAnalize.getInput(out int stringType); //type 1 is char, type 2 is number
-            sAnalize.validate(userInput);
+            charType = sAnalize.validate(userInput);
 
-            Console.WriteLine($"string type is {stringType}"); // for testing
+            //Console.WriteLine($"\n string type is {stringType}"); // for testing the string type in getInput return
 
             sAnalize.isPalindrome(userInput);
-            sAnalize.isDividedByThree(userInput);
-            //sAnalize.howManyCapitalized(userInput);
+            if (charType == 2)
+                sAnalize.isDividedByThree(userInput);
+            if (charType == 1)
+                sAnalize.howManyCapitalized(userInput);
         }
     }
 
@@ -42,6 +45,7 @@ namespace Ex01_04
                     userInput = System.Console.ReadLine();
                 }
             }
+            Console.WriteLine("\n");
 
             type = flag;
             return userInput;
@@ -132,6 +136,18 @@ namespace Ex01_04
 
             Console.WriteLine("Input is NOT divisable by 3.\n");
             return false;
+        }
+
+        public int howManyCapitalized(string userInput)
+        {
+            int countCapitalized = 0;
+            foreach (char c in userInput){
+                if (Char.IsUpper(c))
+                    countCapitalized++;
+            }
+
+            Console.WriteLine($"There are {countCapitalized} upper case characters.\n");
+            return countCapitalized;
         }
     }
 }
