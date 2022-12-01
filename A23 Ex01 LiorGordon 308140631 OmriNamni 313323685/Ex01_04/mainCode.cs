@@ -56,6 +56,9 @@ namespace Ex01_04
             int length = s.Length;
             bool isNum = false; //checks if first char is a number or a letter
 
+            if (string.IsNullOrEmpty(s))
+                return -1;
+
             isNum = char.IsDigit(s[0]);
             if (isNum == false)
             {
