@@ -1,0 +1,16 @@
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\bin\Debug\Ex02.ConsoleUtils.dll
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.csproj.AssemblyReference.cache
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.csproj.CoreCompileInputs.cache
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.csproj.CopyComplete
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 OranMor 318854338 TalYehuda 315006031\bin\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.exe
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 OranMor 318854338 TalYehuda 315006031\bin\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.pdb
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 OranMor 318854338 TalYehuda 315006031\bin\Debug\Ex02.ConsoleUtils.dll
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 OranMor 318854338 TalYehuda 315006031\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.csproj.CoreCompileInputs.cache
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 OranMor 318854338 TalYehuda 315006031\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.csproj.CopyComplete
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 OranMor 318854338 TalYehuda 315006031\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.exe
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 OranMor 318854338 TalYehuda 315006031\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.pdb
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\bin\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.exe.config
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\bin\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.exe
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\bin\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.pdb
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.exe
+C:\Users\97250\Desktop\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.pdb
