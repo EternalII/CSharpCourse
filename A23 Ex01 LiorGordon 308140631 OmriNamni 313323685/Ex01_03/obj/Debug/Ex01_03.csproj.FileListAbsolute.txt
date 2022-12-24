@@ -1,9 +1,0 @@
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\obj\Debug\Ex01_03.csproj.AssemblyReference.cache
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\obj\Debug\Ex01_03.csproj.CoreCompileInputs.cache
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\bin\Debug\Ex01_03.exe
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\bin\Debug\Ex01_03.pdb
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\bin\Debug\Ex01_01.exe
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\bin\Debug\Ex01_01.pdb
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\obj\Debug\Ex01_03.csproj.CopyComplete
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\obj\Debug\Ex01_03.exe
-C:\OMRI - HIT\C# Guy Ronen\A23 Ex01\Ex01_03\obj\Debug\Ex01_03.pdb
