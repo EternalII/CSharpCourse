@@ -147,11 +147,20 @@ namespace Ex02_Othelo
             Console.WriteLine("Choose game mode:");
             Console.WriteLine("1) Single Player");
             Console.WriteLine("2) Multiplayer");
-            int isMultiplayerInput = int.Parse(Console.ReadLine());
+
+            int isMultiplayerInput = 0;
+
             while (isMultiplayerInput != 1 && isMultiplayerInput != 2)
             {
-                Console.WriteLine("Please choose 1 or 2");
-                isMultiplayerInput = int.Parse(Console.ReadLine());
+                try
+                {
+                    Console.WriteLine("Please choose option 1 or 2");
+                    isMultiplayerInput = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid input, please try again:");
+                }
             }
 
             i_isMultiplayer = isMultiplayerInput == 1 ? false : true;
@@ -174,7 +183,10 @@ namespace Ex02_Othelo
             Console.WriteLine("Choose board size:" + Environment.NewLine +
                 "1) 6x6" + Environment.NewLine +
                 "2) 8x8");
-            int boardSizeChoice = int.Parse(Console.ReadLine());
+
+
+            int boardSizeChoice = -1;
+
             while (boardSizeChoice != 1 && boardSizeChoice != 2)
             {
                 Console.WriteLine("Choose option 1 or 2 for board size:");

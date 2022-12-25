@@ -1,0 +1,8 @@
+D:\GitHub\CSharpCourse\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\bin\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.exe.config
+D:\GitHub\CSharpCourse\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\bin\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.exe
+D:\GitHub\CSharpCourse\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\bin\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.pdb
+D:\GitHub\CSharpCourse\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\Ex02.csproj.AssemblyReference.cache
+D:\GitHub\CSharpCourse\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\Ex02.csproj.CoreCompileInputs.cache
+D:\GitHub\CSharpCourse\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\Ex02.csproj.CopyComplete
+D:\GitHub\CSharpCourse\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.exe
+D:\GitHub\CSharpCourse\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685\obj\Debug\A23 Ex02 LiorGordon 308140631 OmriNeemani 313323685.pdb
