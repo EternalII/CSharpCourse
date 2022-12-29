@@ -36,9 +36,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Ex02.ConsoleUtils">
-      <HintPath>..\..\..\..\..\Hit2023\C#\Homework\Second\A23 Ex02 LiorGordon 308140631\A23 Ex02 LiorGordon 308140631\Ex02_01\Ex02.ConsoleUtils.dll</HintPath>
-    </Reference>
+    <Compile Include="Console.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ex03.GarageLogic\Ex03.GarageLogic.csproj">
+      <Project>{ad0f836d-da57-483c-bf46-cd119de82f94}</Project>
+      <Name>Ex03.GarageLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

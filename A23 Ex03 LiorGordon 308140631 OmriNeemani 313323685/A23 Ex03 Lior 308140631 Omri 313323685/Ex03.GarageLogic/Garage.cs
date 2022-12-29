@@ -6,13 +6,40 @@ using System.Threading.Tasks;
 
 namespace Ex03.GarageLogic
 {
-    class Class1
+    public class Garage //This is a singletone so we can only have one dictionary of licenses in garage
     {
+        private static Garage garageList = new Garage();
+        public static Garage listVehicles
+        {
+            get { return garageList; }
+        }
+        
+        private Dictionary<string, garageVehicle> licenseList = new Dictionary<string, garageVehicle>();
+        private Garage()
+        {
 
+        }
 
+        public bool isVehInGarage(string license)
+        {
+            garageVehicle data;
+            bool licenseExists = licenseList.TryGetValue(license, out data);
+            if (licenseExists)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 
-    class WheelsData
+    public class garageVehicle
+    {
+        string ownerName;
+        int ownerPhone;
+        string vehState = "In Repairs";
+    }
+    public class WheelsData
     {
         string manufacturer;
         float currAirPressure;
