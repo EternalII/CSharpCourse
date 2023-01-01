@@ -22,6 +22,24 @@ namespace Ex03.GarageLogic
         eleccar,
         truck
     }
+
+    interface IFuel
+    {
+        FuelTypes fuelType { get; } // removed set
+        float currLiters { get; set; }
+        float maxLiters { get; }
+
+        void refill(float amount);
+    }
+
+    interface IElectric
+    {
+        string remainingBatteryTime { get; set; }
+        string maxBatteryTime { get; }
+
+        void recharge(string timeAdd);
+    }
+
     //public class Garage //This is a singletone so we can only have one dictionary of licenses in garage
     //{
     //    private static Garage garageList = new Garage();
@@ -51,15 +69,15 @@ namespace Ex03.GarageLogic
 
     public class garageVehicleStatus
     {
-        string ownerName;
-        int ownerPhone;
-        string vehState = "In Repairs";
+        string ownerName { get; set; } = "missing";
+        int ownerPhone { get; set; } = 0;
+        string vehState { get; set; } = "In Repairs";
     }
     public class WheelsData
     {
-        string manufacturer;
-        float currAirPressure;
-        float maxAirPressure;
+        public string manufacturer { get; set; } = "N/A";
+        public float currAirPressure { get; set; } = 0;
+        public float maxAirPressure { get; set; } = 0;
 
         //fillAir(float amount)
         //{
@@ -70,37 +88,21 @@ namespace Ex03.GarageLogic
 
     public abstract class Vehicle
     {
-        string modelName;
-        string licensePlaCate;
-        float energyPercentage;
-        WheelsData wheelsData = new WheelsData();
-    }
-    interface IFuel
-    {
-        FuelTypes fuelType { get; } // removed set
-        float currLiters { get; set; }
-        float maxLiters { get; }
-
-        void refill(float amount);
+        public string modelName { get; set; }
+        public string licensePlaCate { get; set; }
+        public float energyPercentage { get; set; }
+        public WheelsData wheelsData { get; set; }
     }
 
-    interface IElectric
+
+    public class Bike : Vehicle, IFuel
     {
-        string remainingBatteryTime { get; set; }
-        string maxBatteryTime { get; }
-
-        void recharge(string timeAdd);
-    }
-
-    public class Car : Vehicle, IFuel, IElectric
-    {
-
-        // for regular fuel
+        string licenseType { get; set; }
+        int engineCapacity { get; set; }
         private FuelTypes fType;
         public FuelTypes fuelType
         {
             get { return fType; }
-            // set { fType = value;  }
         }
 
         private float fuelAmount; // current fuel amount
@@ -109,7 +111,6 @@ namespace Ex03.GarageLogic
             get { return fuelAmount; }
             set { fuelAmount = value; }
         }
-
         private float mFuel; // max fuel amount
         public float maxLiters
         {
@@ -131,8 +132,11 @@ namespace Ex03.GarageLogic
                 fuelAmount = currFuel + liters;
             }
         }
-
-        // for battery car
+    }
+    public class ElectricBike : Vehicle, IElectric
+    {
+        string licenseType { get; set; }
+        int engineCapacity { get; set; }
         private string batTime;
         public string remainingBatteryTime
         {
@@ -162,5 +166,214 @@ namespace Ex03.GarageLogic
             }
         }
     }
+    public class Car : Vehicle, IFuel
+    {
+        string colour { get; set; }
+        int numOfDoors { get; set; }
+        private FuelTypes fType;
+        public FuelTypes fuelType
+        {
+            get { return fType; }
+        }
+
+        private float fuelAmount; // current fuel amount
+        public float currLiters
+        {
+            get { return fuelAmount; }
+            set { fuelAmount = value; }
+        }
+        private float mFuel; // max fuel amount
+        public float maxLiters
+        {
+            get { return mFuel; }
+        }
+
+        public void refill(float liters)
+        {
+            float maxFuel = maxLiters;
+            float currFuel = fuelAmount;
+
+            float diff = maxFuel - (currFuel + liters);
+            if (diff <= 0)
+            {
+                fuelAmount = maxFuel;
+            }
+            else
+            {
+                fuelAmount = currFuel + liters;
+            }
+        }
+    }
+    public class ElectricCar : Vehicle, IElectric
+    {
+        string colour { get; set; }
+        int numOfDoors { get; set; }
+        private string batTime;
+        public string remainingBatteryTime
+        {
+            get { return batTime; }
+            set { batTime = value; }
+        }
+
+        private string maxBatTime;
+        public string maxBatteryTime
+        {
+            get { return maxBatTime; }
+        }
+        public void recharge(string timeAdd)
+        {
+            Int32.TryParse(timeAdd, out int intTimeAdd);
+            Int32.TryParse(maxBatTime, out int intMaxBat);
+            Int32.TryParse(batTime, out int currBatTime);
+
+            float diff = intMaxBat - (currBatTime + intTimeAdd);
+            if (diff <= 0)
+            {
+                remainingBatteryTime = intMaxBat.ToString();
+            }
+            else
+            {
+                remainingBatteryTime = (currBatTime + intTimeAdd).ToString();
+            }
+        }
+    }
+    public class Truck : Vehicle, IFuel
+    {
+        bool hazardousMaterials { get; set; }
+        float cargoVolume { get; set; }
+        private FuelTypes fType;
+        public FuelTypes fuelType
+        {
+            get { return fType; }
+        }
+
+        private float fuelAmount; // current fuel amount
+        public float currLiters
+        {
+            get { return fuelAmount; }
+            set { fuelAmount = value; }
+        }
+        private float mFuel; // max fuel amount
+        public float maxLiters
+        {
+            get { return mFuel; }
+        }
+
+        public void refill(float liters)
+        {
+            float maxFuel = maxLiters;
+            float currFuel = fuelAmount;
+
+            float diff = maxFuel - (currFuel + liters);
+            if (diff <= 0)
+            {
+                fuelAmount = maxFuel;
+            }
+            else
+            {
+                fuelAmount = currFuel + liters;
+            }
+        }
+    }
+
+    public class Garage
+    {
+        public Vehicle initVehObject(string vehType)
+        {
+            Vehicle vehObject = null;
+
+            switch (vehType)
+            {
+                case "bike":
+                    vehObject = new Bike();
+                    break;
+                case "elecbike":
+                    vehObject = new ElectricBike();
+                    break;
+                case "car":
+                    vehObject = new Car();
+                    break;
+                case "eleccar":
+                    vehObject = new ElectricCar();
+                    break;
+                case "truck":
+                    vehObject = new Truck();
+                    break;
+            }
+
+            return vehObject;
+        }
+    }
 }
+
+    //public class Car : Vehicle, IFuel, IElectric
+    //{
+
+    //    // for regular fuel
+    //    private FuelTypes fType;
+    //    public FuelTypes fuelType
+    //    {
+    //        get { return fType; }
+    //        // set { fType = value;  }
+    //    }
+
+    //    private float fuelAmount; // current fuel amount
+    //    public float currLiters
+    //    {
+    //        get { return fuelAmount; }
+    //        set { fuelAmount = value; }
+    //    }
+
+    //    private float mFuel; // max fuel amount
+    //    public float maxLiters
+    //    {
+    //        get { return mFuel; }
+    //    }
+
+    //    public void refill(float liters)
+    //    {
+    //        float maxFuel = maxLiters;
+    //        float currFuel = fuelAmount;
+
+    //        float diff = maxFuel - (currFuel + liters);
+    //        if (diff <= 0)
+    //        {
+    //            fuelAmount = maxFuel;
+    //        }
+    //        else
+    //        {
+    //            fuelAmount = currFuel + liters;
+    //        }
+    //    }
+
+    //    // for battery car
+    //    private string batTime;
+    //    public string remainingBatteryTime
+    //    {
+    //        get { return batTime; }
+    //        set { batTime = value; }
+    //    }
+
+    //    private string maxBatTime;
+    //    public string maxBatteryTime
+    //    {
+    //        get { return maxBatTime; }
+    //    }
+    //    public void recharge(string timeAdd)
+    //    {
+    //        Int32.TryParse(timeAdd, out int intTimeAdd);
+    //        Int32.TryParse(maxBatTime, out int intMaxBat);
+    //        Int32.TryParse(batTime, out int currBatTime);
+
+    //        float diff = intMaxBat - (currBatTime + intTimeAdd);
+    //        if (diff <= 0)
+    //        {
+    //            remainingBatteryTime = intMaxBat.ToString();
+    //        }
+    //        else
+    //        {
+    //            remainingBatteryTime = (currBatTime + intTimeAdd).ToString();
+    //        }
+    //    }
+    //}
 

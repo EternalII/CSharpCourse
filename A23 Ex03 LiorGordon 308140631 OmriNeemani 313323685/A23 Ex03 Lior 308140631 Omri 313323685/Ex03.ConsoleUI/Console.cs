@@ -60,7 +60,9 @@ namespace Ex03.ConsoleUI
 
         public object fillVehDetails(string license)
         {
-            var vehDetails = new Car(); //Will be a car by default
+            Vehicle vehDetails = null;
+            Garage initVeh = new Garage();
+
             // Ask user for vehicle type: bike, car, truck, etc...
             var allVehTypes = Enum.GetValues(typeof(VehicleTypes));
             System.Console.WriteLine(Environment.NewLine + "Recognized vehicle types: ");
@@ -85,25 +87,15 @@ namespace Ex03.ConsoleUI
                     vehType = vehType.ToLower();
                 }
             }
+            // end vehicle type questioning
+            vehDetails = initVeh.initVehObject(vehType); // initialize correct object for user choice
 
-            // move part below to Garage.cs
-            switch (vehType)
-            {
-                case "bike":
-                    break;
-                case "elecbike":
-                    break;
-                case "car":
-                    vehDetails = new Car();
-                    vehDetails.currLiters = currFuel();
-                    break;
-                case "eleccar":
-                    vehDetails = new Car();
-                    vehDetails.remainingBatteryTime = currBatTime();
-                    break;
-                case "truck":
-                    break;
-            }
+            // ask tire pressure status
+            System.Console.WriteLine(Environment.NewLine + "Enter tire pressure: ");
+            enterWheelsData(ref vehDetails);
+            //// for value testing: System.Console.WriteLine("Test: " + vehDetails.wheelsData.currAirPressure);
+
+
 
             return vehDetails;
         }
@@ -141,5 +133,15 @@ namespace Ex03.ConsoleUI
 
             return addBatTime;
         }
+
+        public void enterWheelsData(ref Vehicle veh)
+        {
+            string inputAirPressure = System.Console.ReadLine();
+            float currAirPressure = float.Parse(inputAirPressure);
+
+            veh.wheelsData = new WheelsData();
+            veh.wheelsData.currAirPressure = currAirPressure;
+        }
+
     }
 }
