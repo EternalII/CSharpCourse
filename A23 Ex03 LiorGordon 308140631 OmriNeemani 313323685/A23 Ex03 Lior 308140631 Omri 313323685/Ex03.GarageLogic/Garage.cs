@@ -23,19 +23,27 @@ namespace Ex03.GarageLogic
         truck
     }
 
-    public enum vehStatus
+    public enum VehStatus
     {
         inRepairs,
         repaired,
         paid
     }
 
-    public enum bikeLicenseTypes
+    public enum BikeLicenseTypes
     {
         A,
         A1,
         AA,
         B
+    }
+
+    public enum CarColours
+    {
+        red,
+        blue,
+        white,
+        grey
     }
 
     interface IFuel
@@ -82,11 +90,11 @@ namespace Ex03.GarageLogic
     //    }
     //}
 
-    public class garageVehicleStatus
+    public struct garageVehicleStatus
     {
-        string ownerName { get; set; } = "missing";
-        int ownerPhone { get; set; } = 0;
-        vehStatus vehState { get; set; } = vehStatus.inRepairs;
+        public string ownerName;
+        public int ownerPhone;
+        public VehStatus vehState;
     }
     public class WheelsData
     {
@@ -107,7 +115,21 @@ namespace Ex03.GarageLogic
         public string licensePlate { get; set; }
         public float energyPercentage { get; set; }
         public WheelsData wheelsData { get; set; }
-        public garageVehicleStatus stats { get; set; }
+        
+        private garageVehicleStatus _stats;
+        public garageVehicleStatus Stats 
+        {
+            get
+            {
+                return _stats;
+            }
+            set
+            {
+                _stats.ownerName = "N/A";
+                _stats.ownerPhone = 0;
+                _stats.vehState = VehStatus.inRepairs;
+            }
+        } 
     }
 
 
@@ -184,8 +206,8 @@ namespace Ex03.GarageLogic
     }
     public class Car : Vehicle, IFuel
     {
-        string colour { get; set; }
-        int numOfDoors { get; set; }
+        public string colour { get; set; }
+        public int numOfDoors { get; set; }
         private FuelTypes fType;
         public FuelTypes fuelType
         {
@@ -222,8 +244,8 @@ namespace Ex03.GarageLogic
     }
     public class ElectricCar : Vehicle, IElectric
     {
-        string colour { get; set; }
-        int numOfDoors { get; set; }
+        public string colour { get; set; }
+        public int numOfDoors { get; set; }
         private string batTime;
         public string remainingBatteryTime
         {
@@ -255,8 +277,8 @@ namespace Ex03.GarageLogic
     }
     public class Truck : Vehicle, IFuel
     {
-        bool hazardousMaterials { get; set; }
-        float cargoVolume { get; set; }
+        public bool hazardousMaterials { get; set; }
+        public float cargoVolume { get; set; }
         private FuelTypes fType;
         public FuelTypes fuelType
         {
@@ -319,5 +341,15 @@ namespace Ex03.GarageLogic
 
             return vehObject;
         }
+    }
+
+    public class ValueOutOfRangeException : Exception
+    {
+        public int batTime { get; }
+        public int maxBatTime { get; }
+        public ValueOutOfRangeException(Exception i_InnerException, int i_NewCapacity, int i_MaxCapacity) 
+        : base (string.Format("The battery time ({0}) exceeds max capacity ({1}).", i_NewCapacity, i_MaxCapacity), i_InnerException)
+        { }
+
     }
 }

@@ -11,10 +11,36 @@ namespace Ex03.ConsoleUI
     {
         public static void Main()
         {
-            Dictionary<string, object> vehList = new Dictionary<string, object>();
-            RegisterVehicle clientVehicle = new RegisterVehicle();
+            Dictionary<string, Vehicle> vehList = new Dictionary<string, Vehicle>(); // list of all vehicles. Should be turned into txt file later.
+            RegisterVehicle clientVehicle = new RegisterVehicle(); // to use objects in console
 
-            string license = clientVehicle.enterLicense(vehList);
+
+
+            int loopFlag = 1;
+            while (loopFlag == 1)
+            {
+                System.Console.WriteLine("Choose an option:");
+                System.Console.WriteLine("[1]Register");
+                System.Console.WriteLine("[2]ShowList");
+                System.Console.WriteLine("[3]ChangeStatus");
+                System.Console.WriteLine("[0]Exit]");
+                string inputOption = System.Console.ReadLine();
+                switch (inputOption)
+                {
+                    case "1":
+                        string license = clientVehicle.enterLicense(vehList);
+                        break;
+                    case "2":
+                        clientVehicle.showGarageList(vehList);
+                        break;
+                    case "3":
+                        break;
+                    case "0":
+                        loopFlag = 0;
+                        break;
+                }
+            }
+
 
 
         }
@@ -22,14 +48,16 @@ namespace Ex03.ConsoleUI
 
     class RegisterVehicle
     {
-        public string enterLicense(Dictionary<string, object> vehList)
+        public string enterLicense(Dictionary<string, Vehicle> vehList)
         {
             System.Console.WriteLine("To enter vehicle into garage, please enter license number:");
             string license = System.Console.ReadLine();
 
             if (!vehList.ContainsKey(license))
             {
-                object vehicle = fillVehDetails(license);
+                Vehicle vehicle = fillVehDetails(license);
+                //vehicle.stats.vehState = 0;
+
                 try
                 {
                     vehList.Add(license, vehicle);
@@ -44,27 +72,16 @@ namespace Ex03.ConsoleUI
                 System.Console.WriteLine("Already in system");
             }
 
-
-            //bool inGarage = licenseList.isVehInGarage(license);
-            //if (inGarage)
-            //{
-            //    System.Console.WriteLine("Vehicle already in garage, loading data . . .");
-            //}
-            //else
-            //{
-            //    System.Console.WriteLine("Adding vehicle to the garage");
-            //    //Add details about vehicle here
-            //}
             return license;
         }
 
-        public object fillVehDetails(string license)
+        public Vehicle fillVehDetails(string license)
         {
-            Vehicle vehDetails = null;
+            //Vehicle vehDetails = null; in case l56 needs fixing
             Garage initVeh = new Garage();
 
             string vehType = askVehType(); // Ask user for vehicle type: bike, car, truck, etc...
-            vehDetails = initVeh.initVehObject(vehType); // initialize correct object for user choice
+            Vehicle vehDetails = initVeh.initVehObject(vehType); // initialize correct object for user choice
 
             // ask tire pressure status
             System.Console.WriteLine(Environment.NewLine + "Enter tire pressure: ");
@@ -141,10 +158,18 @@ namespace Ex03.ConsoleUI
         public void enterWheelsData(ref Vehicle veh)
         {
             string inputAirPressure = System.Console.ReadLine();
-            float currAirPressure = float.Parse(inputAirPressure);
 
-            veh.wheelsData = new WheelsData();
-            veh.wheelsData.currAirPressure = currAirPressure;
+            try
+            {
+                float currAirPressure = float.Parse(inputAirPressure);
+                veh.wheelsData = new WheelsData();
+                veh.wheelsData.currAirPressure = currAirPressure;
+            }
+            catch (FormatException)
+            {
+                System.Console.WriteLine("{0} is not an integer", inputAirPressure);
+                enterWheelsData(ref veh);
+            }
         }
 
         public void questionnaire(string vehType, ref Vehicle veh)
@@ -160,18 +185,18 @@ namespace Ex03.ConsoleUI
                     askLicenseType(ref veh);
                     askEngineCapacity(ref veh);
                     break;
-                //case "car":
-                //    askCarColour(ref veh);
-                //    askNumOfDoors(ref veh);
-                //    break;
-                //case "eleccar":
-                //    askCarColour(ref veh);
-                //    askNumOfDoors(ref veh);
-                //    break;
-                //case "truck":
-                //    askHazMat(ref veh);
-                //    askCargoVol(ref veh);
-                //    break;
+                case "car":
+                    askCarColour(ref veh);
+                    askNumOfDoors(ref veh);
+                    break;
+                case "eleccar":
+                    askCarColour(ref veh);
+                    askNumOfDoors(ref veh);
+                    break;
+                case "truck":
+                    askHazMat(ref veh);
+                    askCargoVol(ref veh);
+                    break;
             }
         }
 
@@ -179,7 +204,7 @@ namespace Ex03.ConsoleUI
         {
             if (veh is Bike || veh is ElectricBike)
             {
-                var bikeLicenses = Enum.GetValues(typeof(bikeLicenseTypes));
+                var bikeLicenses = Enum.GetValues(typeof(BikeLicenseTypes));
                 foreach (var val in bikeLicenses) // prints all bike licenses
                 {
                     System.Console.Write(val + " ");
@@ -190,7 +215,7 @@ namespace Ex03.ConsoleUI
                 bool correctInputFlag = false;
                 while (correctInputFlag == false)
                 {
-                    if (Enum.IsDefined(typeof(bikeLicenseTypes), licenseType))
+                    if (Enum.IsDefined(typeof(BikeLicenseTypes), licenseType))
                     {
                         correctInputFlag = true;
                     }
@@ -234,9 +259,86 @@ namespace Ex03.ConsoleUI
             }
         }
 
-        //void askCarColour(ref Vehicle car)
-        //{
+        void askCarColour(ref Vehicle veh)
+        {
+            System.Console.Write(Environment.NewLine + Environment.NewLine + "Enter car colour: [");
+            var allVehTypes = Enum.GetValues(typeof(CarColours));
+            foreach (var val in allVehTypes) // prints all available colours
+            {
+                System.Console.Write(val + " ");
+            }
+            System.Console.Write("]: ");
+            string colour = System.Console.ReadLine();
+            colour = colour.ToLower();
 
-        //}
+
+            if (veh is Car)
+            {
+                Car car = veh as Car;
+                car.colour = colour;
+            }
+            else if (veh is ElectricCar)
+            {
+                ElectricCar car = veh as ElectricCar;
+            }
+        }
+
+        void askNumOfDoors(ref Vehicle veh)
+        {
+            System.Console.WriteLine(Environment.NewLine + "Enter amount of doors in car: ");
+            string stringNumOfDoors = System.Console.ReadLine();
+            int.TryParse(stringNumOfDoors, out int numOfDoors);
+
+            if (veh is Car)
+            {
+                Car car = veh as Car;
+                car.numOfDoors = numOfDoors;
+            }
+            else if (veh is ElectricCar)
+            {
+                ElectricCar car = veh as ElectricCar;
+                car.numOfDoors = numOfDoors;
+            }
+        }
+
+        void askHazMat(ref Vehicle veh)
+        {
+            if (veh is Truck)
+            {
+                Truck truck = veh as Truck;
+
+                System.Console.WriteLine(Environment.NewLine + "Does the truck carry hazardeous materials: [Yes / No]");
+                string hasHazMat = System.Console.ReadLine();
+                hasHazMat = hasHazMat.ToLower();
+                if (hasHazMat == "yes") { truck.hazardousMaterials = true; }
+                else { truck.hazardousMaterials = false; }
+            }
+        }
+
+        void askCargoVol(ref Vehicle veh)
+        {
+            if (veh is Truck)
+            {
+                Truck truck = veh as Truck;
+
+                System.Console.WriteLine(Environment.NewLine + "Enter cargo capacity: ");
+                string sVolume = System.Console.ReadLine();
+                float.TryParse(sVolume, out float truckVolume);
+
+                truck.cargoVolume = truckVolume;
+            }
+        }
+
+        public void showGarageList(Dictionary<string, Vehicle> vehList)
+        {
+            string showList = string.Format("{0,-35} {1,-20} \n", "License Number", "Status");
+
+            foreach (KeyValuePair<string, Vehicle> veh in vehList)
+            {
+                showList += string.Format("{0,-35} {1,-20} \n", veh.Key, veh.Value.Stats.vehState.ToString());
+            }
+
+            System.Console.WriteLine(showList);
+        }
     }
 }
