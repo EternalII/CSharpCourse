@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98D285CC-7872-4604-9EEF-FCD5404ECD6F}</ProjectGuid>
+    <ProjectGuid>{97E56759-CB28-4E36-8C4F-8DBFD29E13B5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>A23_Ex04_Lior_308140631_Omri_313323685</RootNamespace>
-    <AssemblyName>A23_Ex04_Lior_308140631_Omri_313323685</AssemblyName>
+    <RootNamespace>Ex04.Menus.Interfaces</RootNamespace>
+    <AssemblyName>Ex04.Menus.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
