@@ -8,5 +8,10 @@ namespace Ex04.Menus.Interfaces
 {
     interface Interface1
     {
+        void showMenu();
+        void addMenuItem();
+        void removeMenuItem();
+        
+        List <string> menuItems { get; set; }
     }
 }
