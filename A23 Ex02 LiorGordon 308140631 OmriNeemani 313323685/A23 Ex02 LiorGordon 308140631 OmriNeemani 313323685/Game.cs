@@ -23,7 +23,7 @@ namespace Ex02_Othelo
             m_Player2 = new Player(player2Name, ePlayerColor.White, !isMultiplayer);
             m_gameBoard = new Board(boardSize);
             m_CurrentPlayer = m_Player1;
-            Display.updateUI("Game is ready, please wait a moment", m_CurrentPlayer, m_Player1, m_Player2, m_gameBoard);
+            Display.updateUI("Game is ready, please wait a quick moment", m_CurrentPlayer, m_Player1, m_Player2, m_gameBoard);
         }
 
         public void startGame()
@@ -77,12 +77,6 @@ namespace Ex02_Othelo
                     }
 
                     playerCoordinates = Handler.parseCoordinates(coordinatesStr);
-                    while (playerCoordinates == null) // while statement in order to fix an error occuring due to null error from playerCoordinates
-                    {
-                        Display.updateUI("Incorrect input, try again.", m_CurrentPlayer, m_Player1, m_Player2, m_gameBoard);
-                        coordinatesStr = Console.ReadLine();
-                        playerCoordinates = Handler.parseCoordinates(coordinatesStr);
-                    }
                     isLegalCoordinate = playerCoordinates.isLegalCoordinate(m_gameBoard.Size);
                     isCoordinatesInArray = Handler.foundCoordinatesInArray(playerCoordinates, legalCoordinates);
 

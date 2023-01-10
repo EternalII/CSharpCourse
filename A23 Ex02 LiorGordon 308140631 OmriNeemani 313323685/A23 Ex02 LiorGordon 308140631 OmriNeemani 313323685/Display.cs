@@ -141,37 +141,39 @@ namespace Ex02_Othelo
 
         public static void initGame(out string i_player1, out string i_player2, out int i_BoardSize, out bool i_isMultiplayer)
         {
-            Console.WriteLine("Othelo\\Reversii - Lior Gordon & Omri Neemani");
-            Console.WriteLine("-------------------------");
+            Console.WriteLine("Othelo\\Reversii Lior Gordon & Omri Neemani \nChoose board size:\n" +
+                "1) 6x6\n" +
+                "2) 8x8");
+            int boardSizeChoice = int.Parse(Console.ReadLine());
+            while (boardSizeChoice != 1 && boardSizeChoice != 2)
+            {
+                Console.WriteLine("Please choose 1 or 2");
+                boardSizeChoice = int.Parse(Console.ReadLine());
+            }
 
-            Console.WriteLine("Choose game mode:");
-            Console.WriteLine("1) Single Player");
-            Console.WriteLine("2) Multiplayer");
+            i_BoardSize = boardSizeChoice == 1 ? 6 : 8;
 
-            int isMultiplayerInput = 0;
+            Display.printDivider(i_BoardSize);
 
+            Console.WriteLine("PLEASE Choose game mode:");
+            Console.WriteLine("1) I am a Single player");
+            Console.WriteLine("2) Lets Multiplayer");
+            int isMultiplayerInput = int.Parse(Console.ReadLine());
             while (isMultiplayerInput != 1 && isMultiplayerInput != 2)
             {
-                try
-                {
-                    Console.WriteLine("Please choose option 1 or 2");
-                    isMultiplayerInput = int.Parse(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Invalid input, please try again:");
-                }
+                Console.WriteLine("Please choose 1 or 2");
+                isMultiplayerInput = int.Parse(Console.ReadLine());
             }
 
             i_isMultiplayer = isMultiplayerInput == 1 ? false : true;
 
-            //Display.printDivider(i_BoardSize);
+            Display.printDivider(i_BoardSize);
 
-            Console.WriteLine("Enter first player's name:");
+            Console.WriteLine("Please enter first player's name or nickname:");
             i_player1 = Console.ReadLine();
             if (i_isMultiplayer == true)
             {
-                Console.WriteLine("Enter second player's name:");
+                Console.WriteLine("Please enter second player's name or nickname:");
                 i_player2 = Console.ReadLine();
             }
             else
@@ -179,30 +181,6 @@ namespace Ex02_Othelo
                 i_player2 = "Computer";
                 Console.WriteLine("{0}, you will play against the computer", i_player1);
             }
-
-            Console.WriteLine("Choose board size:" + Environment.NewLine +
-                "1) 6x6" + Environment.NewLine +
-                "2) 8x8");
-
-
-            int boardSizeChoice = -1;
-
-            while (boardSizeChoice != 1 && boardSizeChoice != 2)
-            {
-                Console.WriteLine("Choose option 1 or 2 for board size:");
-                try
-                {
-                    boardSizeChoice = int.Parse(Console.ReadLine());
-                }
-                catch(Exception)
-                {
-                    Console.WriteLine("Invalid input, please try again:");
-                }
-            }
-
-            i_BoardSize = boardSizeChoice == 1 ? 6 : 8;
-
-            Display.printDivider(i_BoardSize);
         }
 
         public static bool printEndGame(Player i_WinningPlayer, Player i_player1, bool i_IsSinglePlayer)
