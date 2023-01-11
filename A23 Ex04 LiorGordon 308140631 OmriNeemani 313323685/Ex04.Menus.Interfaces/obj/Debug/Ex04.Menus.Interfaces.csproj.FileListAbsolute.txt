@@ -1,0 +1,7 @@
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll.config
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.pdb
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.csproj.AssemblyReference.cache
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.csproj.CoreCompileInputs.cache
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.dll
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.pdb

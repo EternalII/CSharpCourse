@@ -1,0 +1,7 @@
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.dll.config
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.dll
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.pdb
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.csproj.AssemblyReference.cache
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.csproj.CoreCompileInputs.cache
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.dll
+D:\GitHub\CSharpCourse\A23 Ex04 LiorGordon 308140631 OmriNeemani 313323685\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.pdb
