@@ -17,9 +17,13 @@ namespace Ex04.Menus.Interfaces
     abstract public class GeneralMenu : IMenu
     {
         protected abstract List<string> options { get; set; }
+        
+        protected string menuName;
+
 
         public void Display()
         {
+            Console.WriteLine("**** [Interface] {0} ****", menuName);
             for (int i = 0; i < options.Count; i++)
             {
                 Console.WriteLine("{0}. {1}", i + 1, options[i]);
@@ -63,6 +67,7 @@ namespace Ex04.Menus.Interfaces
             else
             {
                 Console.WriteLine("Invalid option selected. Please try again.");
+
             }
         }
 
@@ -84,7 +89,8 @@ namespace Ex04.Menus.Interfaces
                 }
                 else
                 {
-                    Console.WriteLine("Failed to parse user input.");
+                    Console.WriteLine("Failed to parse user input, try again:");
+                    RequestOption();
                     return null;
                 }
             }
@@ -96,11 +102,12 @@ namespace Ex04.Menus.Interfaces
     public class MainMenu : GeneralMenu
     {
         protected override List<string> options { get; set; } = new List<string>() { };
-
+        
         public MainMenu()
         {
+            menuName = "Main Menu";
             Console.Clear();
-            Console.WriteLine("**[Interface] Main Menu**");
+            //Console.WriteLine("**[Interface] Main Menu**");
             AddOption("Version and Uppercase");
             AddOption("Show Date/Time");
             AddOption("Exit");
@@ -128,6 +135,13 @@ namespace Ex04.Menus.Interfaces
             }
             Console.Clear();
             Display();
+        }
+
+        public void Reset()
+        {
+            Console.Clear();
+            Display();
+            RequestOption();
         }
     }
 }

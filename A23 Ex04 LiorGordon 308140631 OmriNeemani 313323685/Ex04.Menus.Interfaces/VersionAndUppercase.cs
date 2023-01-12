@@ -12,8 +12,9 @@ namespace Ex04.Menus.Interfaces
 
         public VersionAndUppercase()
         {
+            menuName = "Version And Uppercase";
             Console.Clear();
-            Console.WriteLine("**[Interface] Version And Uppercase**");
+            //Console.WriteLine("**[Interface] Version And Uppercase**");
             AddOption("Show Version");
             AddOption("Count Uppercase");
             AddOption("Return");
@@ -33,7 +34,7 @@ namespace Ex04.Menus.Interfaces
                 case "Count Uppercase":
                     triggerOption = new CountUppercase();
                     break;
-                case "Return":
+                case "Return": // Return implemented in RequestOption()
                     break;
                 default:
                     Console.WriteLine("Option not implemented yet.");

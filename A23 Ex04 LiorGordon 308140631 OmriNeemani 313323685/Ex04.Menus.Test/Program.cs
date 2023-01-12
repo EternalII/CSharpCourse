@@ -12,23 +12,19 @@ namespace Ex04.Menus.Test
         public static void Main()
         {
             MenuInterface intMenu = new MenuInterface();
+            Console.Clear();
+            DelegatesMenu delegateMenu = new DelegatesMenu();
+            delegateMenu.Run();
         }
     }
 
     public class MenuInterface
     {
-        Interfaces.IMenu m_MainMenu = new Interfaces.MainMenu();
+        Interfaces.MainMenu m_MainMenu = new Interfaces.MainMenu();
         
-        public void Show() 
+        public void Show() // Method added as required in homework
         {
-            //string userChoice = "0";
-            //while (userChoice != "3")
-            //{
-            //    Console.Clear();
-            //    m_MainMenu.Display();
-            //    userChoice = Console.ReadLine();
-            //    m_MainMenu.SelectOption(userChoice);
-            //}
+            m_MainMenu.Reset();
         }
     }
 }

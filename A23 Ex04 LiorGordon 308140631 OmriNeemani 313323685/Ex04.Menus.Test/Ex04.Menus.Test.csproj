@@ -39,6 +39,10 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ex04.Menus.Delegates\Ex04.Menus.Delegates.csproj">
+      <Project>{f5b236b0-740c-49dc-9d65-1c3621946494}</Project>
+      <Name>Ex04.Menus.Delegates</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ex04.Menus.Interfaces\Ex04.Menus.Interfaces.csproj">
       <Project>{ee5bab99-b55e-4035-a715-abc805faada9}</Project>
       <Name>Ex04.Menus.Interfaces</Name>

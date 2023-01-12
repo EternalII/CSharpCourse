@@ -38,5 +38,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllMainMenu.cs" />
+    <Compile Include="DelegatesMenu.cs" />
+    <Compile Include="ItemAction.cs" />
+    <Compile Include="ItemMenu.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="MethodsPart.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
