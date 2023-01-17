@@ -7,6 +7,6 @@ Ex01: Split into two tasks:
 
 Ex02: Otello game on console
 
-Ex03: Creating a "garage progra" to store vehicles
+Ex03: Creating a "garage program" to store vehicles
 
 Ex04: Creating a dynamic menu system
