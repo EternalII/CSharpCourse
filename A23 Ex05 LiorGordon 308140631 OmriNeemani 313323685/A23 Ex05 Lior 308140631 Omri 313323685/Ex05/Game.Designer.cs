@@ -1,7 +1,7 @@
 ﻿
 namespace Ex05
 {
-    partial class Form2
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,18 @@ namespace Ex05
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Game
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Game";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Game_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

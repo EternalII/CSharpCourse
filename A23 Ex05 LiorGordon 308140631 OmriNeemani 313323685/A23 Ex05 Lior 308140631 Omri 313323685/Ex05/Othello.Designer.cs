@@ -1,7 +1,7 @@
 ﻿
 namespace Ex05
 {
-    partial class Form1
+    partial class othello
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@ namespace Ex05
             this.vsPlayer.UseVisualStyleBackColor = true;
             this.vsPlayer.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Form1
+            // othello
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,8 +71,8 @@ namespace Ex05
             this.Controls.Add(this.boardSize);
             this.Controls.Add(this.vsPlayer);
             this.Controls.Add(this.vsCPU);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "othello";
+            this.Text = "Othello";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

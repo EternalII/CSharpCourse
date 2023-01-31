@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Ex05
 {
-    public partial class Form2 : Form
+    public partial class Game : Form
     {
-        public Form2()
+        public Game()
         {
             InitializeComponent();
+        }
+
+        private void Game_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

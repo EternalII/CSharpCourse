@@ -10,14 +10,22 @@ using System.Windows.Forms;
 
 namespace Ex05
 {
-    public partial class Form1 : Form
+    public partial class othello : Form
     {
         int i = 1;
-        public Form1()
+        List<GameMode> listGameModes = new List<GameMode>();
+        int index = 1;
+
+
+        public othello()
         {
             InitializeComponent();
-        }
+            listGameModes.Add(new GameMode(6));
+            listGameModes.Add(new GameMode(8));
+            listGameModes.Add(new GameMode(10));
+            listGameModes.Add(new GameMode(12));
 
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -25,20 +33,31 @@ namespace Ex05
 
         private void button1_Click(object sender, EventArgs e)
         {
-            i++;
-            switch(i){
-                case 1:
-                    boardSize.Text = "Board Size: 6x6 (click to increase)";
-                    break;
-                case 2:
-                    boardSize.Text = "Board Size: 8x8 (click to increase)";
-                    break;
-                case 3:
-                    boardSize.Text = "Board Size: 10x10 (click to increase)";
-                    i = 0;
-                    break;
+            //i++;
+            //switch (i)
+            //{
+            //    case 1:
+            //        boardSize.Text = "Board Size: 6x6 (click to increase)";
+            //        break;
+            //    case 2:
+            //        boardSize.Text = "Board Size: 8x8 (click to increase)";
+            //        break;
+            //    case 3:
+            //        boardSize.Text = "Board Size: 10x10 (click to increase)";
+            //        i = 0;
+            //        break;
+            //}
+            GameMode nextMode = listGameModes[index];
+            boardSize.Text = $"Board Size: {nextMode.mode}x{nextMode.mode} (click to increase)";
+            if (index < listGameModes.Count-1)
+            {
+                index++;
             }
-            
+            else
+            {
+                index = 0;
+            }
+                
         }
 
         private void button3_Click(object sender, EventArgs e)

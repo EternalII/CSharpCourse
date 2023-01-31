@@ -10,8 +10,20 @@ namespace Ex05
     {
         static void Main()
         {
-            Form1 form = new Form1();
+            othello form = new othello();
             form.ShowDialog();
+
+
+        }
+    }
+
+    public class GameMode
+    {
+        public int mode = 0;
+
+        public GameMode(int boardSize)
+        {
+            mode = boardSize;
         }
     }
 }
