@@ -66,8 +66,8 @@ namespace Ex05
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Game form = new Game();
-            form.Show();
+            Game form = new Game(listGameModes[modeIndex].mode);
+            form.ShowDialog();
         }
 
         private void boardSize_TextChanged(object sender, EventArgs e)
