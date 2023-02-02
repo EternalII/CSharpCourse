@@ -12,12 +12,10 @@ namespace Ex05
         {
             othello form = new othello();
             form.ShowDialog();
-
-
         }
     }
 
-    public class GameMode
+    public class GameMode // useed in Game.cs for list
     {
         public int mode = 0;
 

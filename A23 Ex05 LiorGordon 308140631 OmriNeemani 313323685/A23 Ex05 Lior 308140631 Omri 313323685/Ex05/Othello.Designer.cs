@@ -52,6 +52,7 @@ namespace Ex05
             this.vsCPU.TabIndex = 1;
             this.vsCPU.Text = "Play against a computer";
             this.vsCPU.UseVisualStyleBackColor = true;
+            this.vsCPU.Click += new System.EventHandler(this.vsCPU_Click);
             // 
             // vsPlayer
             // 
