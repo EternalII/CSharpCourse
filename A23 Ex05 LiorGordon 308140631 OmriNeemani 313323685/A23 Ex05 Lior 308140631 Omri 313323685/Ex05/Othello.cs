@@ -12,9 +12,10 @@ namespace Ex05
 {
     public partial class othello : Form
     {
-        int i = 1;
+        //int i = 1;
+        //public event EventHandler GameButtonTriggered;
         List<GameMode> listGameModes = new List<GameMode>();
-        int index = 1;
+        int modeIndex = 0;
 
 
         public othello()
@@ -47,27 +48,37 @@ namespace Ex05
             //        i = 0;
             //        break;
             //}
-            GameMode nextMode = listGameModes[index];
-            boardSize.Text = $"Board Size: {nextMode.mode}x{nextMode.mode} (click to increase)";
-            if (index < listGameModes.Count-1)
+            GameMode chooseMode;
+            modeIndex++;
+            if (modeIndex < listGameModes.Count) 
             {
-                index++;
+                chooseMode = listGameModes[modeIndex];
+                boardSize.Text = $"Board Size: {chooseMode.mode}x{chooseMode.mode} (click to increase)";
             }
             else
             {
-                index = 0;
+                modeIndex = 0;
+                chooseMode = listGameModes[modeIndex];
+                boardSize.Text = $"Board Size: {chooseMode.mode}x{chooseMode.mode} (click to increase)";
             }
                 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Game form = new Game();
+            form.Show();
         }
 
         private void boardSize_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void vsCPU_Click(object sender, EventArgs e)
+        {
+            Game form = new Game(listGameModes[modeIndex].mode);
+            form.ShowDialog();
         }
     }
 }
