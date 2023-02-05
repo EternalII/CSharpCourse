@@ -20,8 +20,8 @@ namespace Ex05
         public Game(int boardSize)
         {
             InitializeComponent();
-            Button[] dynamicButton;
-            dynamicButton = new Button[boardSize * boardSize];
+            Button[,] dynamicButton;
+            dynamicButton = new Button[boardSize * boardSize, boardSize * boardSize];
             int numOfButtonsInRow = 0, numOfButtonsInCol = 0, buttonNum = 0;
             int bPosX = 0;
             int bPosY = 0;
@@ -29,12 +29,12 @@ namespace Ex05
                 bPosY = numOfButtonsInCol * 50;
                 while (numOfButtonsInRow < boardSize)
                 {
-                    dynamicButton[buttonNum] = new Button();
-                    Controls.Add(dynamicButton[buttonNum]);
-                    dynamicButton[buttonNum].Text = $"Button {numOfButtonsInRow+1}";
+                    dynamicButton[numOfButtonsInCol, numOfButtonsInRow] = new Button();
+                    Controls.Add(dynamicButton[numOfButtonsInCol, numOfButtonsInRow]);
+                    dynamicButton[numOfButtonsInCol, numOfButtonsInRow].Text = $"Button {numOfButtonsInRow+1}";
                     bPosX = (numOfButtonsInRow * 50);
-                    dynamicButton[buttonNum].Location = new Point(bPosX, bPosY);
-                    dynamicButton[buttonNum].Size = new Size(50, 50);
+                    dynamicButton[numOfButtonsInCol, numOfButtonsInRow].Location = new Point(bPosX, bPosY);
+                    dynamicButton[numOfButtonsInCol, numOfButtonsInRow].Size = new Size(50, 50);
                     numOfButtonsInRow++;
                     buttonNum++;
                 }
