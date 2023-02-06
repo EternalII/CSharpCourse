@@ -26,8 +26,6 @@ namespace Ex05
             set 
             {
                 state = value;
-                //if (value == eDiskState.Placeable)
-                //    BackColor = Color.MediumSeaGreen;
                 switch (state)
                 {
                     case eDiskState.Placeable:
@@ -35,9 +33,11 @@ namespace Ex05
                         break;
                     case eDiskState.Red:
                         Image = r_RedCoin;
+                        SizeMode = PictureBoxSizeMode.StretchImage;
                         break;
                     case eDiskState.Yellow:
                         Image = r_YellowCoin;
+                        SizeMode = PictureBoxSizeMode.StretchImage;
                         break;
                 }
             }

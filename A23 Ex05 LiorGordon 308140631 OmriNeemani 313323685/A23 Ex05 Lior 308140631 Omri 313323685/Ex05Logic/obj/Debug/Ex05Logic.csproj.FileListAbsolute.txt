@@ -1,0 +1,7 @@
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05Logic\obj\Debug\Ex05Logic.csproj.AssemblyReference.cache
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05Logic\obj\Debug\Ex05Logic.csproj.CoreCompileInputs.cache
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05Logic\bin\Debug\Ex05Logic.dll.config
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05Logic\bin\Debug\Ex05Logic.dll
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05Logic\bin\Debug\Ex05Logic.pdb
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05Logic\obj\Debug\Ex05Logic.dll
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05Logic\obj\Debug\Ex05Logic.pdb

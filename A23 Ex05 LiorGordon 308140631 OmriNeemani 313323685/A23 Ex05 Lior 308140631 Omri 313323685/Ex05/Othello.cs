@@ -44,20 +44,6 @@ namespace Ex05
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //i++;
-            //switch (i)
-            //{
-            //    case 1:
-            //        boardSize.Text = "Board Size: 6x6 (click to increase)";
-            //        break;
-            //    case 2:
-            //        boardSize.Text = "Board Size: 8x8 (click to increase)";
-            //        break;
-            //    case 3:
-            //        boardSize.Text = "Board Size: 10x10 (click to increase)";
-            //        i = 0;
-            //        break;
-            //}
             GameMode chooseMode;
             modeIndex++;
             if (modeIndex < listGameModes.Count) 
@@ -77,6 +63,7 @@ namespace Ex05
         private void button3_Click(object sender, EventArgs e)
         {
             GameBoard form = new GameBoard(listGameModes[modeIndex].mode);
+            form.SelectMode = eGameModes.Versus;
             form.ShowDialog();
         }
 
@@ -88,6 +75,7 @@ namespace Ex05
         private void vsCPU_Click(object sender, EventArgs e)
         {
             GameBoard form = new GameBoard(listGameModes[modeIndex].mode);
+            form.SelectMode = eGameModes.SinglePlayer;
             form.ShowDialog();
         }
     }

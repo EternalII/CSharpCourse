@@ -42,6 +42,7 @@
     <Compile Include="Disk.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Logic.cs" />
     <Compile Include="Othello.cs">
       <SubType>Form</SubType>
     </Compile>

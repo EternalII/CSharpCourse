@@ -1,0 +1,7 @@
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05.GameLogic\obj\Debug\Ex05GameLogic.csproj.CoreCompileInputs.cache
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05.GameLogic\bin\Debug\Ex05GameLogic.dll.config
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05.GameLogic\bin\Debug\Ex05GameLogic.dll
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05.GameLogic\bin\Debug\Ex05GameLogic.pdb
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05.GameLogic\obj\Debug\Ex05GameLogic.csproj.AssemblyReference.cache
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05.GameLogic\obj\Debug\Ex05GameLogic.dll
+D:\GitHub\CSharpCourse\A23 Ex05 LiorGordon 308140631 OmriNeemani 313323685\A23 Ex05 Lior 308140631 Omri 313323685\Ex05.GameLogic\obj\Debug\Ex05GameLogic.pdb

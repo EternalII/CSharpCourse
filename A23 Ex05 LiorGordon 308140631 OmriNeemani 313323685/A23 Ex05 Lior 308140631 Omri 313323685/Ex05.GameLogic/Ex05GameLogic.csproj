@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B215918B-12D2-4F02-8702-62A4525FD2BE}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Ex05.GameLogic</RootNamespace>
-    <AssemblyName>Ex05.GameLogic</AssemblyName>
+    <RootNamespace>Ex05GameLogic</RootNamespace>
+    <AssemblyName>Ex05GameLogic</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

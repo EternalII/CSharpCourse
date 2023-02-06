@@ -73,7 +73,7 @@ namespace Ex05
             this.Controls.Add(this.vsPlayer);
             this.Controls.Add(this.vsCPU);
             this.Name = "othello";
-            this.Text = "Othello";
+            this.Text = "Othello - Main Menu";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
