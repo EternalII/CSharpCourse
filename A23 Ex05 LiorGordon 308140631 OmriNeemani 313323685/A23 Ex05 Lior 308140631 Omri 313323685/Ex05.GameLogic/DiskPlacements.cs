@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ex05
+namespace Ex05.GameLogic
 {
-    class InitializeGame
+    class DiskPlacements
     {
-        
+
     }
 }

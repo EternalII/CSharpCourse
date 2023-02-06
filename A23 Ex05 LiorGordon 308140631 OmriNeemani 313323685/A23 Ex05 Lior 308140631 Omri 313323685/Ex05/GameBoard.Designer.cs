@@ -1,7 +1,7 @@
 ﻿
 namespace Ex05
 {
-    partial class Game
+    partial class GameBoard
     {
         /// <summary>
         /// Required designer variable.

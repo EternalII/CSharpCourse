@@ -14,14 +14,4 @@ namespace Ex05
             form.ShowDialog();
         }
     }
-
-    public class GameMode // useed in Game.cs for list
-    {
-        public int mode = 0;
-
-        public GameMode(int boardSize)
-        {
-            mode = boardSize;
-        }
-    }
 }

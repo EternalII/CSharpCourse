@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FFACBEE7-9665-4B99-A306-30E11D821F5B}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>Ex05</RootNamespace>
-    <AssemblyName>Ex05</AssemblyName>
+    <ProjectGuid>{B215918B-12D2-4F02-8702-62A4525FD2BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Ex05.GameLogic</RootNamespace>
+    <AssemblyName>Ex05.GameLogic</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,35 +39,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InitializeGame.cs" />
-    <Compile Include="Othello.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Othello.Designer.cs">
-      <DependentUpon>Othello.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Game.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Game.Designer.cs">
-      <DependentUpon>Game.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Game.resx">
-      <DependentUpon>Game.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Othello.resx">
-      <DependentUpon>Othello.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="DiskPlacements.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

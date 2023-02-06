@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05", "Ex05\Ex05.csproj", "{FFACBEE7-9665-4B99-A306-30E11D821F5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05.Form", "Ex05\Ex05.Form.csproj", "{FFACBEE7-9665-4B99-A306-30E11D821F5B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B215918B-12D2-4F02-8702-62A4525FD2BE} = {B215918B-12D2-4F02-8702-62A4525FD2BE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05.GameLogic", "Ex05.GameLogic\Ex05.GameLogic.csproj", "{B215918B-12D2-4F02-8702-62A4525FD2BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{FFACBEE7-9665-4B99-A306-30E11D821F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFACBEE7-9665-4B99-A306-30E11D821F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFACBEE7-9665-4B99-A306-30E11D821F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B215918B-12D2-4F02-8702-62A4525FD2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B215918B-12D2-4F02-8702-62A4525FD2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B215918B-12D2-4F02-8702-62A4525FD2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B215918B-12D2-4F02-8702-62A4525FD2BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

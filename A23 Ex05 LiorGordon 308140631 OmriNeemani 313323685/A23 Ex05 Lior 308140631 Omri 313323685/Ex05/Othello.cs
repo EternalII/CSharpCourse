@@ -27,6 +27,16 @@ namespace Ex05
             listGameModes.Add(new GameMode(12));
 
         }
+
+        public class GameMode
+        {
+            public int mode = 0;
+
+            public GameMode(int boardSize)
+            {
+                mode = boardSize;
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -66,7 +76,7 @@ namespace Ex05
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Game form = new Game(listGameModes[modeIndex].mode);
+            GameBoard form = new GameBoard(listGameModes[modeIndex].mode);
             form.ShowDialog();
         }
 
@@ -77,7 +87,7 @@ namespace Ex05
 
         private void vsCPU_Click(object sender, EventArgs e)
         {
-            Game form = new Game(listGameModes[modeIndex].mode);
+            GameBoard form = new GameBoard(listGameModes[modeIndex].mode);
             form.ShowDialog();
         }
     }
