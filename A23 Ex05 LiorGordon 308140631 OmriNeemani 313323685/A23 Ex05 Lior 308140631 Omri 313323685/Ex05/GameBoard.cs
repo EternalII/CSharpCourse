@@ -37,6 +37,7 @@ namespace Ex05
         {
             GameLogic.CpuHasMoved += GameLogic_CpuHasMoved;
             GameLogic.CpuMakeMove += GameLogic_CpuMakeMove;
+            GameLogic.TitleSwitch += GameLogic_TitleSwitch;
 
             m_BoardSize = boardSize;
             dynamicBox = new Disk[boardSize, boardSize];
@@ -79,6 +80,11 @@ namespace Ex05
             }
         }
 
+        private void GameLogic_TitleSwitch()
+        {
+            Text = m_title + $" | {GameLogic.CurrPlayer.m_Name}'s turn";
+        }
+
         private void GameLogic_CpuMakeMove()
         {
             GameLogic.CPUPlay(dynamicBox, m_BoardSize);
@@ -103,10 +109,10 @@ namespace Ex05
                 GameLogic.CheckBoard(dynamicBox, m_BoardSize);
             }
 
-            if (GameLogic.m_Turn == ePlayer.Player1)
-                Text = m_title + " | Red's turn";
-            else
-                Text = m_title + " | Yellow's turn";
+            //if (GameLogic.m_Turn == ePlayer.Player1)
+            //    Text = m_title + " | Red's turn";
+            //else
+            //    Text = m_title + " | Yellow's turn";
 
             if (GameLogic.m_GameEnded == 1)
             {
@@ -143,7 +149,7 @@ namespace Ex05
             else
                 Text = "Player vs Player";
             m_title = Text;
-            Text = m_title + " | Red's turn";
+            Text = m_title + " | Red starts";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

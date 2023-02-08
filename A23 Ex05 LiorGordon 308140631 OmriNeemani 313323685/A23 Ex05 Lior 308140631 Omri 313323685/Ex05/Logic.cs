@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace Ex05
 {
     public delegate void CpuMove();
+    public delegate void TitleChange();
     public enum ePlayer
     {
         Player1,
@@ -20,6 +21,7 @@ namespace Ex05
         bool m_CanMove;
         public int m_numOfTurnsSkipped;
         public event CpuMove CpuHasMoved, CpuMakeMove;
+        public event TitleChange TitleSwitch;
 
         public Logic()
         {
@@ -42,7 +44,7 @@ namespace Ex05
                 Opponent = r_Player2;
                 m_Turn = ePlayer.Player1;
             }
-
+            TitleSwitch?.Invoke();
         }
 
         public void CheckBoard(object board, int boardSize)
@@ -117,11 +119,8 @@ namespace Ex05
                                 checkBoard[x, y].m_FaceY = faceY;
                                 checkBoard[x, y].m_PosX = x;
                                 checkBoard[x, y].m_PosY = y;
-
                                 return 1;
                             }
-                            else
-                                return 0;
                         }
                     }
                 }
