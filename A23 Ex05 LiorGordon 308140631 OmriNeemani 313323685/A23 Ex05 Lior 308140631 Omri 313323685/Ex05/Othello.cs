@@ -39,7 +39,7 @@ namespace Ex05
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            CenterToScreen();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -73,7 +73,7 @@ namespace Ex05
             Disk dsk = sender as Disk;
             if (dsk.State == eDiskState.Placeable)
             {
-                dsk.State = GameLogic.CurrPlayer.playerDisk.State;//GameLogic.CurrPlayer.playerDisk.State;
+                dsk.State = GameLogic.CurrPlayer.playerDisk.State;
                 GameLogic.UpdateBoard(dynamicBox, m_BoardSize, dsk);
                 GameLogic.switchTurns();
                 GameLogic.CheckBoard(dynamicBox, m_BoardSize);
@@ -87,8 +87,8 @@ namespace Ex05
             if (GameLogic.m_GameEnded == 1)
             {
                 string message = $"{GameLogic.m_winnerName} won!\n" +
-                    $"Red: {GameLogic.r_Player1.m_TotalScore} \n" +
-                    $"Yellow: {GameLogic.r_Player2.m_TotalScore} \n" +
+                    $"Red: {GameLogic.r_Player1.m_Score} [{GameLogic.r_Player1.m_TotalScore}] \n" +
+                    $"Yellow: {GameLogic.r_Player2.m_Score} [{GameLogic.r_Player2.m_TotalScore}] \n" +
                     $"Would you like another round?";
                 string title = "Game Over";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -111,6 +111,7 @@ namespace Ex05
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
+            CenterToScreen();
             if (SelectMode == eGameModes.SinglePlayer)
                 Text = "Player vs CPU";
             else
