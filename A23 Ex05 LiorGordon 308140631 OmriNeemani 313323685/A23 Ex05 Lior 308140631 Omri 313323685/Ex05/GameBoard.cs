@@ -35,11 +35,15 @@ namespace Ex05
 
         private void InitializeBoard(int boardSize)
         {
+            GameLogic.CpuHasMoved += GameLogic_CpuHasMoved;
+            GameLogic.CpuMakeMove += GameLogic_CpuMakeMove;
+
             m_BoardSize = boardSize;
             dynamicBox = new Disk[boardSize, boardSize];
             int numOfRanks = 0, numOfFiles = 0, squareNum = 0; // Ranks - Horizontal squares, Files - Vertical squares, squareNum - total num of disks.
             int bPosX = 0;
             int bPosY = 0;
+
             while (numOfFiles < boardSize)
             {
                 bPosY = numOfFiles * 50;
@@ -66,6 +70,25 @@ namespace Ex05
             dynamicBox[boardSize/2 - 1, boardSize/2].State = eDiskState.Red;
 
             GameLogic.CheckBoard(dynamicBox, boardSize);
+
+            if (SelectMode == eGameModes.SinglePlayer)
+            {
+                GameLogic.RandomizeCPUPlayer();
+                if (GameLogic.r_Player1.m_Computer == true)
+                    GameLogic.CPUPlay(dynamicBox, boardSize);
+            }
+        }
+
+        private void GameLogic_CpuMakeMove()
+        {
+            GameLogic.CPUPlay(dynamicBox, m_BoardSize);
+        }
+
+        private void GameLogic_CpuHasMoved()
+        {
+            GameLogic.m_numOfTurnsSkipped = 0;
+            GameLogic.switchTurns();
+            GameLogic.CheckBoard(dynamicBox, m_BoardSize);
         }
 
         private void square_Click(object sender, EventArgs e)
@@ -74,6 +97,7 @@ namespace Ex05
             if (dsk.State == eDiskState.Placeable)
             {
                 dsk.State = GameLogic.CurrPlayer.playerDisk.State;
+                GameLogic.m_numOfTurnsSkipped = 0;
                 GameLogic.UpdateBoard(dynamicBox, m_BoardSize, dsk);
                 GameLogic.switchTurns();
                 GameLogic.CheckBoard(dynamicBox, m_BoardSize);
@@ -96,6 +120,8 @@ namespace Ex05
                 if (result == DialogResult.Yes)
                 {
                     GameLogic.ResetBoard(dynamicBox, m_BoardSize);
+                    GameLogic.CheckBoard(dynamicBox, m_BoardSize);
+                    GameLogic.m_GameEnded = 0;
                 }
                 else
                 {

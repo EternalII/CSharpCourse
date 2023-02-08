@@ -77,6 +77,7 @@ namespace Ex05
             GameBoard form = new GameBoard(listGameModes[modeIndex].mode);
             form.SelectMode = eGameModes.SinglePlayer;
             form.ShowDialog();
+            
         }
     }
 }

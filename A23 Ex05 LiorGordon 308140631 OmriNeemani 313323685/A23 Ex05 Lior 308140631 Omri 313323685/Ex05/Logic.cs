@@ -1,5 +1,9 @@
-﻿namespace Ex05
+﻿using System;
+using System.Collections.Generic;
+
+namespace Ex05
 {
+    public delegate void CpuMove();
     public enum ePlayer
     {
         Player1,
@@ -13,7 +17,9 @@
         public Player CurrPlayer, Opponent;
         public int m_GameEnded = 0;
         public string m_winnerName;
-        int m_numOfTurnsSkipped = 0;
+        bool m_CanMove;
+        public int m_numOfTurnsSkipped;
+        public event CpuMove CpuHasMoved, CpuMakeMove;
 
         public Logic()
         {
@@ -39,12 +45,12 @@
 
         }
 
-        public int CheckBoard(object board, int boardSize)
+        public void CheckBoard(object board, int boardSize)
         {
             Disk[,] placePiece = board as Disk[,];
-            int numOfMoves = 0;
 
             clearPlaceables(board);
+            m_CanMove = false;
 
             for (int i = 0; i < boardSize; i++)
             {
@@ -52,28 +58,27 @@
                 {
                     if (placePiece[i, j].State == CurrPlayer.playerDisk.State)
                     {
-                        numOfMoves = checkAvailableMoves(board, boardSize, i, j);
-
-                        if (numOfMoves == 0)
-                        {
-                            switchTurns();
-                            clearPlaceables(board);
-                            CheckBoard(board, boardSize);
-                            m_numOfTurnsSkipped++;
-                            if (m_numOfTurnsSkipped > 5)
-                            {
-                                CountScore(board);
-                                m_GameEnded = 1;
-                            }
-                            else
-                                CheckBoard(board, boardSize);
-                        }
+                        checkAvailableMoves(board, boardSize, i, j);
                     }
                 }
             }
 
-            return numOfMoves;
-            
+            if (!m_CanMove)
+            {
+                switchTurns();
+                m_numOfTurnsSkipped++;
+                clearPlaceables(board);
+                if (m_numOfTurnsSkipped > 2)
+                {
+                    CountScore(board);
+                    m_GameEnded = 1;
+                }
+                else
+                    CheckBoard(board, boardSize);
+            }
+
+            if (CurrPlayer.m_Computer)
+                CpuMakeMove?.Invoke();
         }
 
         int checkAvailableMoves(object board, int boardSize, int i, int j)
@@ -107,6 +112,7 @@
                             if (checkBoard[x, y].State == eDiskState.Empty || checkBoard[x, y].State == eDiskState.Placeable)
                             {
                                 checkBoard[x, y].State = eDiskState.Placeable;
+                                m_CanMove = true;
                                 checkBoard[x, y].m_FaceX = faceX;
                                 checkBoard[x, y].m_FaceY = faceY;
                                 checkBoard[x, y].m_PosX = x;
@@ -225,6 +231,9 @@
         {
             Disk[,] board = i_Board as Disk[,];
 
+            r_Player1.m_Score = 0;
+            r_Player2.m_Score = 0;
+
             foreach (Disk each in board)
             {
                 each.State = eDiskState.Empty;
@@ -235,6 +244,44 @@
             board[i_BoardSize / 2 - 1, i_BoardSize / 2].State = eDiskState.Red;
         }
 
+        public void CPUPlay(object i_Board, int i_boardSize)
+        {
+            Disk[,] board = i_Board as Disk[,];
+            List<Disk> movableLocations = new List<Disk>();
+
+            foreach (Disk place in board)
+            {
+                if (place.State == eDiskState.Placeable)
+                {
+                    movableLocations.Add(place);
+                }
+            }
+
+            var random = new Random();
+            int index = random.Next(movableLocations.Count);
+
+            if (movableLocations.Count == 0)
+                return;
+            movableLocations[index].State = CurrPlayer.playerDisk.State;
+            UpdateBoard(board, i_boardSize, movableLocations[index]);
+
+            CpuHasMoved?.Invoke();
+            
+        }
+
+        public void RandomizeCPUPlayer()
+        {
+            var rand = new Random();
+            if (rand.Next(2) == 0)
+            {
+                r_Player1.m_Computer = true;
+            }
+            else
+            {
+                r_Player2.m_Computer = true;
+            }
+        }
+
     }
 
     public abstract class Player
@@ -243,6 +290,7 @@
         public int m_Score = 0;
         public int m_TotalScore = 0;
         public string m_Name;
+        public bool m_Computer = false;
 
         protected Player()
         {
