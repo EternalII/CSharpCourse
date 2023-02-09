@@ -5,10 +5,10 @@ VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05", "Ex05\Ex05.csproj", "{FFACBEE7-9665-4B99-A306-30E11D821F5B}"
 	ProjectSection(ProjectDependencies) = postProject
-		{A90D1601-90A1-4A20-95E0-339B23C15670} = {A90D1601-90A1-4A20-95E0-339B23C15670}
+		{B5A961B6-2408-4DBA-A6A7-7D063D364399} = {B5A961B6-2408-4DBA-A6A7-7D063D364399}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05Logic", "Ex05Logic\Ex05Logic.csproj", "{A90D1601-90A1-4A20-95E0-339B23C15670}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05.GameLogic", "Ex05.GameLogic\Ex05.GameLogic.csproj", "{B5A961B6-2408-4DBA-A6A7-7D063D364399}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +20,10 @@ Global
 		{FFACBEE7-9665-4B99-A306-30E11D821F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFACBEE7-9665-4B99-A306-30E11D821F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFACBEE7-9665-4B99-A306-30E11D821F5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A90D1601-90A1-4A20-95E0-339B23C15670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A90D1601-90A1-4A20-95E0-339B23C15670}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A90D1601-90A1-4A20-95E0-339B23C15670}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A90D1601-90A1-4A20-95E0-339B23C15670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A961B6-2408-4DBA-A6A7-7D063D364399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A961B6-2408-4DBA-A6A7-7D063D364399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A961B6-2408-4DBA-A6A7-7D063D364399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A961B6-2408-4DBA-A6A7-7D063D364399}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

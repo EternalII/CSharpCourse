@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ex05.GameLogic;
+using System.Threading.Tasks;
 
 namespace Ex05
 {
@@ -72,12 +74,12 @@ namespace Ex05
 
             GameLogic.CheckBoard(dynamicBox, boardSize);
 
-            if (SelectMode == eGameModes.SinglePlayer)
-            {
-                GameLogic.RandomizeCPUPlayer();
-                if (GameLogic.r_Player1.m_Computer == true)
-                    GameLogic.CPUPlay(dynamicBox, boardSize);
-            }
+            //if (SelectMode == eGameModes.SinglePlayer)
+            //{
+            //    GameLogic.RandomizeCPUPlayer();
+            //    if (GameLogic.r_Player1.m_Computer == true)
+            //        GameLogic.CPUPlay(dynamicBox, boardSize);
+            //}
         }
 
         private void GameLogic_TitleSwitch()
@@ -85,8 +87,9 @@ namespace Ex05
             Text = m_title + $" | {GameLogic.CurrPlayer.m_Name}'s turn";
         }
 
-        private void GameLogic_CpuMakeMove()
+        private async void GameLogic_CpuMakeMove()
         {
+            await Task.Delay(TimeSpan.FromSeconds(2));
             GameLogic.CPUPlay(dynamicBox, m_BoardSize);
         }
 
@@ -100,7 +103,7 @@ namespace Ex05
         private void square_Click(object sender, EventArgs e)
         {
             Disk dsk = sender as Disk;
-            if (dsk.State == eDiskState.Placeable)
+            if (dsk.State == eDiskState.Placeable && GameLogic.CurrPlayer.m_Computer == false)
             {
                 dsk.State = GameLogic.CurrPlayer.playerDisk.State;
                 GameLogic.m_numOfTurnsSkipped = 0;
@@ -108,11 +111,6 @@ namespace Ex05
                 GameLogic.switchTurns();
                 GameLogic.CheckBoard(dynamicBox, m_BoardSize);
             }
-
-            //if (GameLogic.m_Turn == ePlayer.Player1)
-            //    Text = m_title + " | Red's turn";
-            //else
-            //    Text = m_title + " | Yellow's turn";
 
             if (GameLogic.m_GameEnded == 1)
             {
@@ -144,8 +142,13 @@ namespace Ex05
             MaximizeBox = false;
             MinimizeBox = false;
             CenterToScreen();
-            if (SelectMode == eGameModes.SinglePlayer)
+            if (SelectMode == eGameModes.SinglePlayer) 
+            { 
                 Text = "Player vs CPU";
+                GameLogic.RandomizeCPUPlayer();
+                if (GameLogic.r_Player1.m_Computer == true)
+                    GameLogic.CPUPlay(dynamicBox, m_BoardSize);
+            }
             else
                 Text = "Player vs Player";
             m_title = Text;

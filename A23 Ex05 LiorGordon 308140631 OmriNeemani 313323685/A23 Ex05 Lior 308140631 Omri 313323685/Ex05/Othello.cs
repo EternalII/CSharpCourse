@@ -12,8 +12,6 @@ namespace Ex05
 {
     public partial class othello : Form
     {
-        //int i = 1;
-        //public event EventHandler GameButtonTriggered;
         List<GameMode> listGameModes = new List<GameMode>();
         int modeIndex = 0;
 

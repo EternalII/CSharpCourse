@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B215918B-12D2-4F02-8702-62A4525FD2BE}</ProjectGuid>
+    <ProjectGuid>{B5A961B6-2408-4DBA-A6A7-7D063D364399}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Ex05GameLogic</RootNamespace>
-    <AssemblyName>Ex05GameLogic</AssemblyName>
+    <RootNamespace>Ex05.GameLogic</RootNamespace>
+    <AssemblyName>Ex05.GameLogic</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,7 +39,35 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiskPlacements.cs" />
+    <Compile Include="Disk.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logic.cs" />
+    <Compile Include="Players.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoinRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoinYellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

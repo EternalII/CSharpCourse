@@ -39,10 +39,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Disk.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Logic.cs" />
     <Compile Include="Othello.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,11 +52,6 @@
       <DependentUpon>GameBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -76,16 +67,15 @@
     <EmbeddedResource Include="Othello.resx">
       <DependentUpon>Othello.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CoinRed.png" />
+    <ProjectReference Include="..\Ex05.GameLogic\Ex05.GameLogic.csproj">
+      <Project>{b5a961b6-2408-4dba-a6a7-7d063d364399}</Project>
+      <Name>Ex05.GameLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CoinYellow.png" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

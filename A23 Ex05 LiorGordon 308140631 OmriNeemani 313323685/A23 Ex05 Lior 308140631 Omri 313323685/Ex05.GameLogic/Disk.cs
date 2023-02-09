@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace Ex05
+namespace Ex05.GameLogic
 {
     public enum eDiskState
     {
