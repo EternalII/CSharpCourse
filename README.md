@@ -10,3 +10,5 @@ Ex02: Otello game on console
 Ex03: Creating a "garage program" to store vehicles
 
 Ex04: Creating a dynamic menu system
+
+Ex05: Creating an Othello game for Player vs Player and Player vs CPU
